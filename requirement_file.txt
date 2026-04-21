@@ -1,0 +1,16 @@
+tensorflow
+mediapipe
+scikit-learn
+numpy==1.26.4
+protobuf==3.20.3
+opencv-python
+matplotlib
+Pillow
+customtkinter
+packaging
+vidgear
+pyzmq
+SpeechRecognition
+pyttsx3
+gtts
+pyaudio

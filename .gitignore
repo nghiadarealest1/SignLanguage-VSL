@@ -1,0 +1,92 @@
+# =========================
+# 1. Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.venv/
+ENV/
+env/
+
+# =========================
+# 2. Jupyter Notebook
+# =========================
+.ipynb_checkpoints
+
+# =========================
+# 3. Logs & temp
+# =========================
+*.log
+*.tmp
+*.swp
+*.swo
+
+# =========================
+# 4. OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# 5. IDE
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# 6. Dataset (QUAN TRỌNG)
+# =========================
+dataset/
+data/
+*.npy
+*.npz
+*.csv
+*.xlsx
+
+# Nếu bạn muốn giữ cấu trúc thư mục dataset:
+# !dataset/.gitkeep
+
+# =========================
+# 7. Model AI
+# =========================
+*.h5
+*.keras
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# =========================
+# 8. Media files (nếu có)
+# =========================
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.png
+
+# =========================
+# 9. Build / dist
+# =========================
+build/
+dist/
+*.egg-info/
+
+# =========================
+# 10. Cache (TensorFlow / PyTorch)
+# =========================
+.cache/
+*.cache
+
+# =========================
+# 11. Secrets
+# =========================
+.env
+*.env
+config.json
+credentials.json

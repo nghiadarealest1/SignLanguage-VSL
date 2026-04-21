@@ -1,0 +1,33 @@
+              precision    recall  f1-score   support
+
+    buon_non       1.00      1.00      1.00         6
+   chong_mat       1.00      0.83      0.91         6
+    dau_bung       1.00      1.00      1.00         6
+    dau_chan       1.00      1.00      1.00         6
+     dau_mat       1.00      1.00      1.00         6
+     dau_tay       1.00      0.67      0.80         6
+      di_ung       1.00      1.00      1.00         6
+          do       1.00      1.00      1.00         6
+          ho       1.00      1.00      1.00         6
+     khi_nao       1.00      1.00      1.00         6
+     kho_tho       1.00      1.00      1.00         6
+       khong       0.86      1.00      0.92         6
+    kiem_tra       0.86      1.00      0.92         6
+     lau_roi       1.00      0.83      0.91         6
+      lay_so       0.86      1.00      0.92         6
+   mang_thai       1.00      1.00      1.00         6
+         met       1.00      0.83      0.91         6
+       nhieu       0.86      1.00      0.92         6
+       o_dau       0.86      1.00      0.92         6
+         sot       1.00      1.00      1.00         6
+    suc_khoe       1.00      1.00      1.00         6
+     the_nao       1.00      0.83      0.91         6
+       thuoc       1.00      1.00      1.00         6
+ toi_co_lich       0.86      1.00      0.92         6
+toi_den_kham       1.00      1.00      1.00         6
+toi_hieu_roi       1.00      1.00      1.00         6
+        uong       1.00      1.00      1.00         6
+
+    accuracy                           0.96       162
+   macro avg       0.97      0.96      0.96       162
+weighted avg       0.97      0.96      0.96       162
