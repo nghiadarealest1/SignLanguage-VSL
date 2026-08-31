@@ -11,6 +11,7 @@ Trong nghiên cứu này, việc thu thập dữ liệu được thực hiện d
 Tổng cộng, mỗi frame chứa hơn 540 điểm đặc trưng, được lưu trữ dưới dạng mảng số học ba chiều (x, y, z) phản ánh vị trí của từng bộ phận trong không gian.
 Dữ liệu đầu ra của mỗi frame được lưu dưới định dạng .npy (NumPy array file) — một định dạng phổ biến trong khoa học dữ liệu, giúp lưu trữ mảng nhiều chiều với tốc độ truy xuất cao, đồng thời dễ dàng nạp lại trong quá trình huấn luyện mô hình.
 Sau khi hoàn tất quá trình thu thập, dữ liệu được sắp xếp trong thư mục data/ theo cấu trúc:
+
 <img width="413" height="520" alt="image" src="https://github.com/user-attachments/assets/352b5142-8ece-41ac-97aa-21e463b7cd94" />
 
 Quá trình thu thập dữ liệu được triển khai thông qua một chương trình Python có chức năng ghi nhận chuỗi khung hình (frames) tương ứng với từng hành động ký hiệu. Mỗi phiên thu thập được tiến hành như sau:
@@ -27,3 +28,23 @@ Quá trình thu thập dữ liệu được triển khai thông qua một chươ
 Quá trình chuẩn hóa bắt đầu ngay khi thu thập dữ liệu từ camera trong file collect_data.py. Tại mỗi khung hình, MediaPipe Holistic tạo ra ba nhóm điểm mốc chính:
 - Pose Landmarks: 33 điểm, mỗi điểm gồm 4 giá trị (x, y, z, visibility)
 - Hand Landmarks (trái và phải): mỗi bên 21 điểm, mỗi điểm gồm 3 giá trị (x, y, z)
+Sau khi thu thập, mỗi mẫu gồm 30 khung hình được lưu dưới dạng file .npy bằng thư viện NumPy. Định dạng này cho phép:
+-	Lưu trữ dữ liệu dạng mảng nhiều chiều (multi-dimensional array)
+-	Đọc/ghi tốc độ rất cao, tối ưu cho huấn luyện mô hình
+-	Hạn chế lưu trữ những pixel không cần thiết như ảnh thô (.jpg, .png)
+Cấu trúc thư mục được tổ chức như sau:
+dataset/
+   └── ten_hanh_dong/
+           ├── 0.npy
+           ├── 1.npy
+           ├── ...
+## Quá trình huấn luyện mô hình
+Tham số	Giá trị được chọn	Các giá trị đã thử	Lý do lựa chọn
+Số epoch	100	50, 80, 100, 150	Đủ để mô hình hội tụ ổn định, val_loss không giảm thêm sau epoch ~85.
+Batch size	16	8, 16, 32	Tốt nhất về độ mượt gradient và tốc độ trên cả CPU/GPU.
+Optimizer	Adam (lr=0.001)	Adam, RMSprop	Adam cho tốc độ hội tụ nhanh và ổn định nhất trên dữ liệu keypoints.
+Loss function	categorical_crossentropy	sparse_categorical_crossentropy	Phù hợp với nhãn đã được chuyển thành one-hot vector.
+Metrics	accuracy	–	Dễ hiểu và trực quan đối với bài toán phân loại đa lớp.
+Validation split	20% (tách riêng)	built-in validation_split	Kiểm soát quá trình đánh giá tốt hơn nhờ tập test cố định, không bị trộn lẫn.
+Dropout rate	0.3 (3 tầng)	0.2, 0.4, 0.5	Giảm overfitting hiệu quả mà không làm giảm quá nhiều khả năng học của mô hình.
+
