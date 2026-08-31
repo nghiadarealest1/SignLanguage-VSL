@@ -7,10 +7,12 @@ Trong nghiên cứu này, việc thu thập dữ liệu được thực hiện d
 	Mỗi video ngôn ngữ ký hiệu (ví dụ “bác sĩ”, “bệnh nhân”, “dị ứng”) được xử lý thành chuỗi khung hình (frame), và từ mỗi khung hình, chương trình sẽ trích xuất các điểm mốc (landmarks) gồm:
 - 33 điểm cơ thể (pose landmarks)
 - 21 điểm tay trái và 21 điểm tay phải (hand landmarks)
-	Tổng cộng, mỗi frame chứa hơn 540 điểm đặc trưng, được lưu trữ dưới dạng mảng số học ba chiều (x, y, z) phản ánh vị trí của từng bộ phận trong không gian.
-	Dữ liệu đầu ra của mỗi frame được lưu dưới định dạng .npy (NumPy array file) — một định dạng phổ biến trong khoa học dữ liệu, giúp lưu trữ mảng nhiều chiều với tốc độ truy xuất cao, đồng thời dễ dàng nạp lại trong quá trình huấn luyện mô hình.
+
+Tổng cộng, mỗi frame chứa hơn 540 điểm đặc trưng, được lưu trữ dưới dạng mảng số học ba chiều (x, y, z) phản ánh vị trí của từng bộ phận trong không gian.
+Dữ liệu đầu ra của mỗi frame được lưu dưới định dạng .npy (NumPy array file) — một định dạng phổ biến trong khoa học dữ liệu, giúp lưu trữ mảng nhiều chiều với tốc độ truy xuất cao, đồng thời dễ dàng nạp lại trong quá trình huấn luyện mô hình.
 Sau khi hoàn tất quá trình thu thập, dữ liệu được sắp xếp trong thư mục data/ theo cấu trúc:
 <img width="413" height="520" alt="image" src="https://github.com/user-attachments/assets/352b5142-8ece-41ac-97aa-21e463b7cd94" />
+
 Quá trình thu thập dữ liệu được triển khai thông qua một chương trình Python có chức năng ghi nhận chuỗi khung hình (frames) tương ứng với từng hành động ký hiệu. Mỗi phiên thu thập được tiến hành như sau:
 - Người thực hiện đứng hoặc ngồi trước camera trong điều kiện ánh sáng ổn định.
 - Mỗi hành động (ví dụ: uống, đau bụng, xin chào, ...) được thực hiện trong nhiều lần lặp lại để tăng tính đa dạng.
