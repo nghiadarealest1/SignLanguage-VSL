@@ -1,1 +1,4 @@
-
+# Nghiên cứu một số công cụ trong thị giác máy tính và mô hình học sâu để xây dựng hệ thống phục vụ giao tiếp giữa nhân viên y tế và bệnh nhân khiếm thính tại các bệnh viện
+## 📌 Giới thiệu
+Ngôn ngữ ký hiệu được xem là “cầu nối” giao tiếp chính của người khiếm thính. Tuy nhiên, do đa số nhân viên y tế không được đào tạo sử dụng ngôn ngữ ký hiệu, nên việc hiểu và phản hồi chính xác nội dung của bệnh nhân là điều không hề dễ dàng. Chính vì vậy, việc xây dựng một hệ thống thông minh có khả năng nhận diện và chuyển đổi ngôn ngữ ký hiệu thành tiếng Việt sẽ góp phần thu hẹp khoảng cách giao tiếp, mang lại sự công bằng trong tiếp cận dịch vụ y tế cho nhóm người yếu thế này.
+	Từ những cơ sở thực tiễn và khoa học nêu trên, đề tài “Nghiên cứu một số công cụ trong thị giác máy tính và mô hình học sâu để xây dựng hệ thống phục vụ giao tiếp giữa nhân viên y tế và bệnh nhân khiếm thính tại các bệnh viện” được lựa chọn với mong muốn đóng góp một giải pháp công nghệ khả thi và mang tính nhân văn, đồng thời thể hiện khả năng vận dụng kiến thức chuyên ngành vào giải quyết các vấn đề xã hội thực tế.
