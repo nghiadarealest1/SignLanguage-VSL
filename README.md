@@ -32,19 +32,22 @@ Sau khi thu thập, mỗi mẫu gồm 30 khung hình được lưu dưới dạn
 -	Lưu trữ dữ liệu dạng mảng nhiều chiều (multi-dimensional array)
 -	Đọc/ghi tốc độ rất cao, tối ưu cho huấn luyện mô hình
 -	Hạn chế lưu trữ những pixel không cần thiết như ảnh thô (.jpg, .png)
-Cấu trúc thư mục được tổ chức như sau:
-dataset/
-   └── ten_hanh_dong/
-           ├── 0.npy
-           ├── 1.npy
-           ├── ...
 ## Quá trình huấn luyện mô hình
-Tham số	Giá trị được chọn	Các giá trị đã thử	Lý do lựa chọn
-Số epoch	100	50, 80, 100, 150	Đủ để mô hình hội tụ ổn định, val_loss không giảm thêm sau epoch ~85.
-Batch size	16	8, 16, 32	Tốt nhất về độ mượt gradient và tốc độ trên cả CPU/GPU.
-Optimizer	Adam (lr=0.001)	Adam, RMSprop	Adam cho tốc độ hội tụ nhanh và ổn định nhất trên dữ liệu keypoints.
-Loss function	categorical_crossentropy	sparse_categorical_crossentropy	Phù hợp với nhãn đã được chuyển thành one-hot vector.
-Metrics	accuracy	–	Dễ hiểu và trực quan đối với bài toán phân loại đa lớp.
-Validation split	20% (tách riêng)	built-in validation_split	Kiểm soát quá trình đánh giá tốt hơn nhờ tập test cố định, không bị trộn lẫn.
-Dropout rate	0.3 (3 tầng)	0.2, 0.4, 0.5	Giảm overfitting hiệu quả mà không làm giảm quá nhiều khả năng học của mô hình.
+## Biểu đồ độ chính xác
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/166baa70-384a-41b9-af69-46ebd43221c7" />
+## Biểu đồ độ mất mát
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/4a8a4754-0675-4586-9d82-d38a41f6f450" />
+## Ma trận nhầm lẫn
+<img width="951" height="790" alt="image" src="https://github.com/user-attachments/assets/680246a1-06b9-4586-8229-2ec530deb332" />
+## Giao diện đăng nhập, đăng ký
+<img width="401" height="570" alt="image" src="https://github.com/user-attachments/assets/a7c8bd3e-2781-4d5c-8c7f-ace7ad0c4de7" />
+<img width="414" height="568" alt="image" src="https://github.com/user-attachments/assets/79a5a08b-4ac0-4f65-b879-33bbb121d8f0" />
+## Giao diện hội thoại
+<img width="945" height="570" alt="image" src="https://github.com/user-attachments/assets/428c2aae-1007-4126-addc-6ea7521e9631" />
+## Giao diện hội thoại chính khi kết nối 
+<img width="945" height="571" alt="image" src="https://github.com/user-attachments/assets/26ab6a8b-33bf-462a-90e2-301f3a445232" />
+## Công cụ hỗ trợ nhập liệu nhanh
+<img width="945" height="577" alt="image" src="https://github.com/user-attachments/assets/b32a86cd-1150-4947-a867-427ed92326f2" />
+## Giao diện trao đổi tin nhắn
+<img width="945" height="577" alt="image" src="https://github.com/user-attachments/assets/5d2b0e25-2145-43ef-bc38-6a79754999b0" />
 
